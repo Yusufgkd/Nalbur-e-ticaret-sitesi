@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NalburX – E‑Ticaret</title>
+  <meta name="description" content="NalburX: Uygun fiyatlı nalbur ve hırdavat ürünleri. Matkap, çekiç, tornavida, boya malzemeleri ve daha fazlası." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="script.js">
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="NalburX ana sayfa">
+        <div class="brand-badge" aria-hidden="true"><span>Nx</span></div>
+        <div>
+          NalburX
+          <small>Hırdavat & Nalbur</small>
+        </div>
+      </a>
+
+      <div class="searchbar">
+        <input id="searchInput" class="input" type="search" placeholder="Ara: çekiç, tornavida, matkap…" aria-label="Ürün ara" />
+        <select id="categorySelect" class="select" aria-label="Kategori seç">
+          <option value="">Tüm Kategoriler</option>
+        </select>
+        <select id="priceSelect" class="select price" aria-label="Fiyat filtresi">
+          <option value="">Fiyat</option>
+          <option value="0-250">0–250 ₺</option>
+          <option value="250-500">250–500 ₺</option>
+          <option value="500-1000">500–1000 ₺</option>
+          <option value="1000-">1000+ ₺</option>
+        </select>
+        <button id="clearFilters" class="btn btn-ghost" aria-label="Filtreleri temizle">Temizle</button>
+      </div>
+
+      <div class="nav-right">
+        <button id="themeToggle" class="btn btn-ghost" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
+        <button id="cartButton" class="btn cart-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="cartDrawer">
+          🛒 Sepet
+          <span id="cartCount" class="cart-count" aria-live="polite">0</span>
+        </button>
+        <button class="btn">Kampanyalar</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="toolbar">
+      <div class="chips" id="activeChips"></div>
+      <div><span class="badge" id="resultCount">0 ürün</span></div>
+    </div>
+
+    <section id="productGrid" class="grid" aria-live="polite"></section>
+  </main>
+
+  <aside id="cartDrawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="drawer-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span class="badge">Sepet</span>
+        <strong id="cartTitle">Ürünleriniz</strong>
+      </div>
+      <button id="closeCart" class="btn btn-ghost" aria-label="Sepeti kapat">Kapat</button>
+    </div>
+    <div id="cartItems" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <div class="row">
+        <span>Ara toplam</span>
+        <strong id="cartSubtotal">0 ₺</strong>
+      </div>
+      <button id="checkoutBtn" class="btn btn-primary" disabled>Ödeme Yap</button>
+      <small class="muted">Güvenli ödeme için yönlendirileceksiniz.</small>
+    </div>
+  </aside>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
