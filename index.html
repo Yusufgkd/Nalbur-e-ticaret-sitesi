@@ -7,13 +7,21 @@
   <meta name="description" content="NalburX: Uygun fiyatlı nalbur ve hırdavat ürünleri. Matkap, çekiç, tornavida, boya malzemeleri ve daha fazlası." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="script.js">
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
+  <div class="full-bg-container" style="position:absolute; top:0; left:0; width:100vw; min-height:100vh; height:100%; z-index:-1; overflow:hidden;">
+    <img src="img/image-1.0.jpeg" alt="NalburX Arka Plan" style="position:absolute; top:0; left:0; width:100vw; height:100%; min-height:100vh; object-fit:cover; opacity:0.75;" />
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; width:100vw; height:100vh; z-index:2;">
+  <h1 style="font-size:clamp(2.2rem,7vw,4.2rem); font-family:'Montserrat', Inter, Arial, sans-serif; font-weight:700; color:#111; margin-bottom:24px; text-align:center; width:100vw; padding:clamp(16px,6vw,64px);">NalburX'e Hoşgeldiniz!</h1>
+  <p style="font-size:clamp(1.1rem,3vw,2rem); font-family:'Montserrat', Inter, Arial, sans-serif; font-weight:700; color:#111; margin-bottom:32px; text-align:center; width:100vw; padding:clamp(12px,4vw,40px);">Uygun fiyatlı, kaliteli hırdavat ve nalbur ürünleriyle tanışın. Güvenli alışveriş, hızlı teslimat ve güler yüzlü hizmet ile yanınızdayız.</p>
+      <a href="urunler.html" class="btn btn-primary" style="font-size:1.1rem; padding:16px 32px; align-self:center;">Alışverişe Başla</a>
+    </div>
+  </div>
+  <header style="position: fixed; top: 0; left: 0; width: 100vw; z-index: 100; background: var(--bg); box-shadow: var(--shadow);">
+    <div class="container header-inner">  
       <a href="#" class="brand" aria-label="NalburX ana sayfa">
         <div class="brand-badge" aria-hidden="true"><span>Nx</span></div>
         <div>
@@ -23,59 +31,112 @@
       </a>
 
       <div class="searchbar">
-        <input id="searchInput" class="input" type="search" placeholder="Ara: çekiç, tornavida, matkap…" aria-label="Ürün ara" />
-        <select id="categorySelect" class="select" aria-label="Kategori seç">
-          <option value="">Tüm Kategoriler</option>
-        </select>
-        <select id="priceSelect" class="select price" aria-label="Fiyat filtresi">
-          <option value="">Fiyat</option>
-          <option value="0-250">0–250 ₺</option>
-          <option value="250-500">250–500 ₺</option>
-          <option value="500-1000">500–1000 ₺</option>
-          <option value="1000-">1000+ ₺</option>
-        </select>
-        <button id="clearFilters" class="btn btn-ghost" aria-label="Filtreleri temizle">Temizle</button>
+
       </div>
 
       <div class="nav-right">
-        <button id="themeToggle" class="btn btn-ghost" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
-        <button id="cartButton" class="btn cart-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="cartDrawer">
-          🛒 Sepet
-          <span id="cartCount" class="cart-count" aria-live="polite">0</span>
-        </button>
-        <button class="btn">Kampanyalar</button>
+  <button id="themeToggle" class="btn btn-ghost" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
+  <a href="index.html" class="btn" style="margin-left:8px; white-space:nowrap;">Anasayfa</a>
+  <button class="btn">Kampanyalar</button>
+  <a href="urunler.html" class="btn" style="margin-left:8px; white-space:nowrap;">Alışverişe Başla</a>
+  <a href="register.html" class="btn register-btn" style="margin-left:8px; white-space:nowrap;">Kayıt Ol</a>
       </div>
     </div>
+
   </header>
 
-  <main class="container">
-    <div class="toolbar">
-      <div class="chips" id="activeChips"></div>
-      <div><span class="badge" id="resultCount">0 ürün</span></div>
+  <section class="welcome-section" style="width:100vw; min-height:100vh; position:relative; margin-top:0; overflow:hidden;">
+  <!-- Welcome section'daki metinler üstteki container'a taşındı -->
+  </section>
+
+  <section class="about-section container">
+    <h2 class="about-title">Hakkımızda</h2>
+    <div class="about-content">
+      <p>NalburX, 20 yılı aşkın tecrübesiyle kaliteli hırdavat ve nalbur ürünlerini en uygun fiyatlarla sunar. Müşteri memnuniyetini ön planda tutan ekibimizle, güvenilir alışveriş ve hızlı teslimat sağlıyoruz. Vizyonumuz; sektörde yenilikçi ve lider bir marka olmak, misyonumuz ise her müşterimize en iyi hizmeti sunmaktırH.</p>
+      <ul class="about-list">
+        <li>20+ yıl tecrübe</li>
+        <li>Geniş ürün yelpazesi</li>
+        <li>Güler yüzlü hizmet</li>
+        <li>Hızlı ve güvenli teslimat</li>
+      </ul>
     </div>
+  </section>
 
-    <section id="productGrid" class="grid" aria-live="polite"></section>
-  </main>
-
-  <aside id="cartDrawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
-    <div class="drawer-header">
-      <div style="display:flex; align-items:center; gap:8px;">
-        <span class="badge">Sepet</span>
-        <strong id="cartTitle">Ürünleriniz</strong>
+  <section class="choose-us-section container" style="margin-top:32px; margin-bottom:32px;">
+    <h2 class="choose-title">Neden Bizi Seçmelisiniz?</h2>
+    <div class="choose-us-grid">
+      <div class="choose-box">
+        <h3>Kaliteli Ürünler</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</p>
       </div>
-      <button id="closeCart" class="btn btn-ghost" aria-label="Sepeti kapat">Kapat</button>
+      <div class="choose-box">
+        <h3>Hızlı Teslimat</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</p>
+      </div>
+      <div class="choose-box">
+        <h3>Uygun Fiyat</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</p>
+      </div>
     </div>
-    <div id="cartItems" class="drawer-body"></div>
-    <div class="drawer-footer">
-      <div class="row">
-        <span>Ara toplam</span>
-        <strong id="cartSubtotal">0 ₺</strong>
+  </section>
+
+  <section class="promo-gallery-section container">
+    <h2 class="promo-title">Dükkanımızdan Kareler</h2>
+    <div class="promo-gallery-grid">
+      <div class="promo-photo"><img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Dükkan Fotoğrafı 1"></div>
+      <div class="promo-photo"><img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Dükkan Fotoğrafı 2"></div>
+      <div class="promo-photo"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Dükkan Fotoğrafı 3"></div>
+      <div class="promo-photo"><img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Dükkan Fotoğrafı 4"></div>
+    </div>
+    <div class="promo-desc">
+      <p>Modern mağazamızda yüzlerce ürün, ferah ortam ve güler yüzlü hizmet ile sizleri bekliyoruz. Dükkanımızdan kareler ile ortamımızı yakından tanıyın!</p>
+    </div>
+  </section>
+
+  <section class="cert-section container">
+    <h2 class="cert-title">Sertifikalarımız & Belgelerimiz</h2>
+    <div class="cert-gallery">
+      <div class="cert-item">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=300&q=80" alt="ISO Sertifikası">
+        <span>ISO 9001:2015</span>
+      </div>
+      <div class="cert-item">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=300&q=80" alt="TSE Belgesi">
+        <span>TSE Belgesi</span>
+      </div>
+      <div class="cert-item">
+        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=300&q=80" alt="Müşteri Memnuniyeti">
+        <span>Müşteri Memnuniyeti Ödülü</span>
+      </div>
+    </div>
+    <div class="cert-desc">
+      <p>Kalite ve güvence için ulusal ve uluslararası sertifikalara sahibiz. Belgelerimizle alışverişinizin güvenli ve kaliteli olduğunu garanti ediyoruz.</p>
+    </div>
+  </section>
+
+  <aside id="cartDrawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">  
+
+  <footer>
+    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px;">
+      <div>
+        <strong>NalburX</strong> &copy; 2025
+        <span class="muted">Tüm hakları saklıdır.</span>
+      </div>
+      <div style="display:flex; gap:12px; align-items:center;">
+        <a href="#" class="muted">Gizlilik Politikası</a>
+        <a href="#" class="muted">İletişim</a>
+        <a href="#" class="muted">SSS</a>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center;">
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="muted" style="font-size:22px;"><svg width="22" height="22" viewBox="0 0 24 24" style="vertical-align:middle;"><path fill="#1877F3" d="M22.675 0h-21.35c-.733 0-1.325.592-1.325 1.326v21.348c0 .733.592 1.326 1.325 1.326h11.495v-9.294h-3.128v-3.622h3.128v-2.771c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.312h3.587l-.467 3.622h-3.12v9.294h6.116c.733 0 1.325-.593 1.325-1.326v-21.349c0-.734-.592-1.326-1.325-1.326z"/></svg></a>
+  <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="muted" style="font-size:22px;"><svg width="22" height="22" viewBox="0 0 24 24" style="vertical-align:middle;"><path fill="#1DA1F2" d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.555-2.005.959-3.127 1.184a4.916 4.916 0 0 0-8.38 4.482c-4.083-.205-7.697-2.162-10.125-5.144-.423.722-.666 1.561-.666 2.475 0 1.708.87 3.216 2.188 4.099a4.904 4.904 0 0 1-2.228-.616c-.054 2.385 1.693 4.623 4.188 5.117a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417a9.867 9.867 0 0 1-6.102 2.104c-.396 0-.787-.023-1.175-.069a13.945 13.945 0 0 0 7.548 2.212c9.058 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636a10.025 10.025 0 0 0 2.459-2.548z"/></svg></a>
+  <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="muted" style="font-size:22px;"><svg width="22" height="22" viewBox="0 0 24 24" style="vertical-align:middle;"><linearGradient id="insta-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fd5"/><stop offset="50%" stop-color="#ff543e"/><stop offset="100%" stop-color="#c837ab"/></linearGradient><path fill="url(#insta-gradient)" d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.851s-.011 3.584-.069 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.011-4.85-.069c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608-.058-1.266-.069-1.646-.069-4.85s.011-3.584.069-4.851c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308 1.266-.058 1.646-.069 4.85-.069zm0-2.163c-3.259 0-3.667.012-4.947.07-1.276.058-2.687.334-3.678 1.325-.991.991-1.267 2.402-1.325 3.678-.058 1.28-.07 1.688-.07 4.947s.012 3.667.07 4.947c.058 1.276.334 2.687 1.325 3.678.991.991 2.402 1.267 3.678 1.325 1.28.058 1.688.07 4.947.07s3.667-.012 4.947-.07c1.276-.058 2.687-.334 3.678-1.325.991-.991 1.267-2.402 1.325-3.678.058-1.28.07-1.688.07-4.947s-.012-3.667-.07-4.947c-.058-1.276-.334-2.687-1.325-3.678-.991-.991-2.402-1.267-3.678-1.325-1.28-.058-1.688-.07-4.947-.07z"/><circle cx="12" cy="12" r="3.5" fill="#fff"/></svg></a>
       </div>
       <button id="checkoutBtn" class="btn btn-primary" disabled>Ödeme Yap</button>
       <small class="muted">Güvenli ödeme için yönlendirileceksiniz.</small>
     </div>
-  </aside>
-  <script src="script.js"></script>
+  </footer>
+<script src="script.js"></script>
 </body>
 </html>
 

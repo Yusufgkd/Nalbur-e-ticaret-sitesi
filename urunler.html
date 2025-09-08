@@ -1,0 +1,127 @@
+    <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ürünler | NalburX</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .products-section {
+      max-width: 1200px;
+      margin: 48px auto;
+      padding: 0 16px;
+    }
+    .products-title {
+      text-align: center;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    @media (max-width: 900px) {
+      .products-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+    .product-card {
+      background: var(--panel);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      max-width: 220px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--brand);
+    }
+    .product-card p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .product-card .price {
+      font-weight: 700;
+      color: var(--text);
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center;">  
+      <a href="index.html" class="brand" aria-label="NalburX ana sayfa">
+        <div class="brand-badge" aria-hidden="true"><span>Nx</span></div>
+        <div>
+          NalburX
+          <small>Hırdavat & Nalbur</small>
+        </div>
+      </a>
+      <div class="nav-right" style="display: flex; gap: 8px; align-items: center;">
+  <button id="themeToggle" class="btn btn-ghost" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
+  <a href="index.html" class="btn" style="margin-left:8px; white-space:nowrap;">Anasayfa</a>
+  <a href="register.html" class="btn register-btn" style="margin-left:8px; white-space:nowrap;">Kayıt Ol</a>
+      </div>
+    </div>
+  </header>
+  <section class="products-section">
+    <h2 class="products-title">Ürünlerimiz</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Matkap">
+        <h3>Matkap</h3>
+        <p>Güçlü ve dayanıklı matkap modelleri ile her işinizde yanınızdayız.</p>
+        <div class="price">1.250 ₺</div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Çekiç">
+        <h3>Çekiç</h3>
+        <p>Ergonomik saplı, sağlam çekiçler ile tamirat işleriniz kolaylaşır.</p>
+        <div class="price">180 ₺</div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Tornavida Seti">
+        <h3>Tornavida Seti</h3>
+        <p>Farklı uç seçenekleriyle her ihtiyaca uygun tornavida setleri.</p>
+        <div class="price">320 ₺</div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Boya Fırçası">
+        <h3>Boya Fırçası</h3>
+        <p>Kaliteli ve iz bırakmayan boya fırçaları ile pürüzsüz sonuçlar.</p>
+        <div class="price">75 ₺</div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=400&q=80" alt="El Aletleri">
+        <h3>El Aletleri</h3>
+        <p>Her türlü tamirat ve montaj için dayanıklı el aletleri.</p>
+        <div class="price">450 ₺</div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80" alt="Kilit">
+        <h3>Kilit</h3>
+        <p>Güvenliğiniz için sağlam ve kaliteli kilit çeşitleri.</p>
+        <div class="price">210 ₺</div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

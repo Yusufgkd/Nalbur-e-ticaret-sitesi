@@ -1,0 +1,108 @@
+  <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kayıt Ol | NalburX</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .register-container {
+      max-width: 400px;
+      margin: 60px auto;
+      background: var(--panel);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .register-container h2 {
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 2rem;
+      color: var(--text);
+    }
+    .register-container label {
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .register-container input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .register-container button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .register-container button:hover {
+      background: var(--brand-600);
+    }
+    .register-container .login-link {
+      text-align: center;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .register-container .login-link a {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header style="position: fixed; top: 0; left: 0; width: 100vw; z-index: 100; background: var(--bg); box-shadow: var(--shadow);">
+    <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center;">  
+      <a href="index.html" class="brand" aria-label="NalburX ana sayfa">
+        <div class="brand-badge" aria-hidden="true"><span>Nx</span></div>
+        <div>
+          NalburX
+          <small>Hırdavat & Nalbur</small>
+        </div>
+      </a>
+      <div class="nav-right" style="display: flex; gap: 8px; align-items: center;">
+        <button id="themeToggle" class="btn btn-ghost" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
+        <a href="index.html" class="btn" style="margin-left:8px; white-space:nowrap;">Anasayfa</a>
+      </div>
+    </div>
+  </header>
+  <div class="register-container" style="margin-top:clamp(120px, 16vh, 160px);">
+    <h2>Hesap Oluştur</h2>
+    <form id="registerForm">
+      <label for="username">Kullanıcı Adı</label>
+      <input type="text" id="username" name="username" required>
+      <label for="email">E-posta</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Şifre</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Kayıt Ol</button>
+    </form>
+    <div class="login-link">
+      Zaten hesabınız var mı? <a href="login.html">Giriş Yap</a>
+    </div>
+  </div>
+  <script src="script.js">
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Kayıt başarılı! (Demo)');
+      // Burada backend entegrasyonu yapılabilir.
+    });
+  </script>
+</body>
+</html>
