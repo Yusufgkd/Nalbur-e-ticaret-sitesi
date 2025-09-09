@@ -75,9 +75,10 @@
         </div>
       </a>
       <div class="nav-right" style="display: flex; gap: 8px; align-items: center;">
-  <button id="themeToggle" class="btn btn-ghost" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
-  <a href="index.html" class="btn" style="margin-left:8px; white-space:nowrap;">Anasayfa</a>
-  <a href="register.html" class="btn register-btn" style="margin-left:8px; white-space:nowrap;">Kayıt Ol</a>
+        <span id="welcomeUser" style="font-weight:600; color:var(--brand); margin-right:16px;"></span>
+        <button id="themeToggle" class="btn btn-ghost" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
+        <a href="index.html" class="btn" style="margin-left:8px; white-space:nowrap;">Anasayfa</a>
+        <a href="register.html" class="btn register-btn" style="margin-left:8px; white-space:nowrap;">Kayıt Ol</a>
       </div>
     </div>
   </header>
@@ -123,5 +124,12 @@
     </div>
   </section>
   <script src="script.js"></script>
+<script>
+  // Kullanıcı adını localStorage'dan al ve header'a yaz
+  const user = localStorage.getItem('nx_user');
+  if (user) {
+    document.getElementById('welcomeUser').textContent = `Hoşgeldin, ${user}`;
+  }
+</script>
 </body>
 </html>

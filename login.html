@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giriş Yap | NalburX</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 60px auto;
+      background: var(--panel);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 2rem;
+      color: var(--text);
+    }
+    .login-container label {
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .login-container button:hover {
+      background: var(--brand-600);
+    }
+    .login-container .register-link {
+      text-align: center;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .login-container .register-link a {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header style="position: fixed; top: 0; left: 0; width: 100vw; z-index: 100; background: var(--bg); box-shadow: var(--shadow);">
+    <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center;">  
+      <a href="index.html" class="brand" aria-label="NalburX ana sayfa">
+        <div class="brand-badge" aria-hidden="true"><span>Nx</span></div>
+        <div>
+          NalburX
+          <small>Hırdavat & Nalbur</small>
+        </div>
+      </a>
+      <div class="nav-right" style="display: flex; gap: 8px; align-items: center;">
+        <button id="themeToggle" class="btn btn-ghost" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
+        <a href="index.html" class="btn" style="margin-left:8px; white-space:nowrap;">Anasayfa</a>
+      </div>
+    </div>
+  </header>
+  <div class="login-container" style="margin-top:clamp(120px, 16vh, 160px);">
+    <h2>Giriş Yap</h2>
+    <form id="loginForm">
+      <label for="username">Kullanıcı Adı</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Şifre</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Giriş Yap</button>
+    </form>
+    <div class="register-link">
+      Hesabınız yok mu? <a href="register.html">Kayıt Ol</a>
+    </div>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      try {
+        const res = await fetch('http://localhost:5000/api/users/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        if (res.ok) {
+          // Kullanıcı adını localStorage'a kaydet
+          localStorage.setItem('nx_user', username);
+          alert('Giriş başarılı!');
+          window.location.href = 'urunler.html';
+        } else {
+          const err = await res.json();
+          alert('Giriş başarısız: ' + (err.message || 'Hata'));
+        }
+      } catch (err) {
+        alert('Sunucuya bağlanılamadı.');
+      }
+    });
+  </script>
+</body>
+</html>
